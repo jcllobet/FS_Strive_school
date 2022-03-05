@@ -118,6 +118,7 @@ let cutString = (str) => {
     return newStr;
 };
 
+console.log(cutString('test'))
 
 /* EXERCISE 10
  Write a function called "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
