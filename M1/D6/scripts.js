@@ -15,10 +15,38 @@ document.getElementsByTagName("footer")[0].innerHTML = "Fake Street 123, Fake Ci
 // EX10: Write a function to add a CSS class to every Amazon link
 
 function myFunction() {
-    var element = document.getElementById("myDIV");
-    element.classList.add("mystyle");
-  }
+    let elements = document.getElementsByTagName("a");
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.add("strive");
+    }
+}
+
+myFunction();
 
 // EX11: Write a function to toggle a CSS class for all the images in the table; that class should set the visibility of the image
 
+function toggle() {
+    let elements = document.getElementsByTagName("img");
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.toggle("hidden");
+    }
+}
+
+toggle();
+
 // EX12: Write a function to color the price of the products in a different one every time it's invoked
+
+let colorList = ['red', 'blue', 'yellow', 'green', 'orange']
+
+function color(colorList) {
+    let elements = document.getElementsByTagName("td");
+    for (let i = 0; i < elements.length; i++) {
+        for (let j = 0; j < colorList.length; j++) {
+            if (elements[j].innerHTML.includes("$")) {
+                elements[i].style.color = colorList[j];
+            }
+        }
+    }
+}
+
+color(colorList);
