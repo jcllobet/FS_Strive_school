@@ -3,6 +3,23 @@
     Write a function called dice; it should randomize an integer number between 1 and 6.
 */
 
+//NOTE: let val = () =
+
+function dice() {
+    return getRandomIntInclusive(1,6)
+}
+
+function getRandomIntInclusive(lowNum, highNum) {
+    let oldNum = Math.random();
+    let oldMax = 1;
+    let oldMin = 0;
+    let oldRange = (oldMax - oldMin);
+    let newRange = highNum - lowNum;
+    let newNum = ((oldNum - oldMin)*newRange/oldRange)+ lowNum
+    return Math.round(newNum)
+}
+
+console.log(`Throwing the dice: ${dice()}`)
 /* EXERCISE 2
     Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
     Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
