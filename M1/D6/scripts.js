@@ -39,12 +39,12 @@ toggle();
 let colorList = ['red', 'blue', 'yellow', 'green', 'orange']
 
 function color(colorList) {
+    counter = 0;
     let elements = document.getElementsByTagName("td");
     for (let i = 0; i < elements.length; i++) {
-        for (let j = 0; j < colorList.length; j++) {
-            if (elements[j].innerHTML.includes("$")) {
-                elements[i].style.color = colorList[j];
-            }
+        if (elements[i].innerHTML.includes("$")) {
+            elements[i].style.color = colorList[counter];
+            counter += 1;
         }
     }
 }
