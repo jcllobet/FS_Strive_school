@@ -43,11 +43,13 @@
       </style>
   </head>
   <body data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+    <header>
     <div>
       <h1 onclick="makeItClickable(event)">This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </div>
-
+    </header>
+    <section>
     <div>
       <hr>
 
@@ -73,19 +75,20 @@
         <input type="text" id="input-field" placeholder="input field for the exercise">
       </div>
     </div>
-
+    </section>
+    <footer onclick="changeFooterText(event)">
     <div>
       <p>And this text is just for the exercise too!</p>
-      <h2 style="color: red">
+      <h2  style="color: red">
         Save this page on your computer and open it with VSCode to get the
         questions!
       </h2>
     </div>
+    </footer> 
     <script>
       /* EXERCISE 1
        Write a function for changing the title of the document in something else.
       */
-      console.log('Hello World')
 
       const changeTitle = function (newTitle) {
         let target = document.getElementsByTagName('h1')[0];
@@ -189,16 +192,18 @@
        Make the heading of the page change color every time the user clicks on it.
       */
 
-      const makeItClickable = function () {
-        
+      const makeItClickable = function (event) {
+        let h2 = event.target;
+        h2.classList.toggle('myHeading');
       };
 
       /* EXERCISE 10
        Change the footer text with something else when the user clicks on it.
       */
 
-      const changeFooterText = function () {
-        //
+      const changeFooterText = function (event) {
+        let footer = event.target;
+        footer.innerHTML ='something else';
       };
 
       /* EXERCISE 11
@@ -206,20 +211,34 @@
       */
 
       const inputField = document.getElementById("input-field");
-      // ...
 
+      // Add event listener on keydown
+      
+      
       /* EXERCISE 12
        Create a welcome alert message when the page successfully loads.
       */
 
+      const sayHello = function(){
+        alert('Hello World');
+        console.log('Hello World');
+      }
+
       window.onload = function () {
-        //
+        //sayHello();
+        inputField.addEventListener('keydown', (event) => {
+          let name = event.key;
+          // Alert the key name and key code on keydown
+          console.log(`User pressed: ${name}`);
+        }, false);
       };
 
       /* EXERCISE 13
        Use HTML5 tags to properly provide semantic meaning to the different portions of the page.
       */
-    </script>
-  
 
-<div id="forest-ext-shadow-host"></div></body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+      
+    
+    </script>
+  </body>
+</html>
