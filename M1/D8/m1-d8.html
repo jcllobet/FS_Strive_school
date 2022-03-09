@@ -1,7 +1,6 @@
-
-<!-- saved from url=(0436)https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/303305604340419.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RCEE6YREN%2F20220309%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20220309T141021Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27M1-D8.html&X-Amz-Signature=33dfcd6dabe2e9f7d37583996cccb731265b07af380fc0b51c4ae36f3aac65b5 -->
 <html class="js-focus-visible gmywte idc0_337" data-js-focus-visible="">
   <head>
+    <title>TESTING</title>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <style>
       .myHeading {
@@ -86,13 +85,15 @@
     </div>
     </footer> 
     <script>
+      
       /* EXERCISE 1
        Write a function for changing the title of the document in something else.
       */
 
+      // NOTE: Title refers to the <header> <title>, not to <h1>
+
       const changeTitle = function (newTitle) {
-        let target = document.getElementsByTagName('h1')[0];
-        target.innerHTML = newTitle;
+        document.title = newTitle;
       };
 
       changeTitle('Watch Me');
