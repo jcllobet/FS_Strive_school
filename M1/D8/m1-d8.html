@@ -1,0 +1,225 @@
+
+<!-- saved from url=(0436)https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/303305604340419.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RCEE6YREN%2F20220309%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20220309T141021Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27M1-D8.html&X-Amz-Signature=33dfcd6dabe2e9f7d37583996cccb731265b07af380fc0b51c4ae36f3aac65b5 -->
+<html class="js-focus-visible gmywte idc0_337" data-js-focus-visible="">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-weight: 400;
+        font-style:  normal;
+        font-family: 'Circular-Loom';
+
+        src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-weight: 500;
+        font-style:  normal;
+        font-family: 'Circular-Loom';
+
+        src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-weight: 700;
+        font-style:  normal;
+        font-family: 'Circular-Loom';
+
+        src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-weight: 900;
+        font-style:  normal;
+        font-family: 'Circular-Loom';
+
+        src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+      }
+      </style>
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+    <div>
+      <h1 onclick="makeItClickable(event)">This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </div>
+
+    <div>
+      <hr>
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school">This link goes to Strive School</a>
+
+      <div>
+        <p>This text is just for the exercise</p>
+      </div>
+
+      <div>
+        <input type="text" id="input-field" placeholder="input field for the exercise">
+      </div>
+    </div>
+
+    <div>
+      <p>And this text is just for the exercise too!</p>
+      <h2 style="color: red">
+        Save this page on your computer and open it with VSCode to get the
+        questions!
+      </h2>
+    </div>
+    <script>
+      /* EXERCISE 1
+       Write a function for changing the title of the document in something else.
+      */
+      console.log('Hello World')
+
+      const changeTitle = function (newTitle) {
+        let target = document.getElementsByTagName('h1')[0];
+        target.innerHTML = newTitle;
+      };
+
+      changeTitle('Watch Me');
+
+      /* EXERCISE 2
+       Write a function for changing the class of the title of the page in "myHeading".
+      */
+
+      const addClassToTitle = function () {
+        let target = document.getElementsByTagName('h1')[0]
+        target.classList.add("myHeading")
+        //
+      };
+
+      addClassToTitle();
+
+      /* EXERCISE 3
+       Write a function for changing the text of only the p which are children of a div.
+      */
+
+      const changePcontent = function () {
+        target = document.querySelectorAll('div p');
+        target.forEach(element => {
+          element.innerHTML = '<b>Hard life</b>: being the child of a div.'
+        });
+      };
+
+      changePcontent()
+
+      /* EXERCISE 4
+       Write a function for changing the href property of every link to https://www.google.com
+      */
+
+      const changeUrls = function () {
+        let hrefList = document.querySelectorAll('a');
+        hrefList.forEach(link => {
+          link.href = 'https://www.google.com';
+        });
+      };
+
+      changeUrls()
+
+      /* EXERCISE 5
+       Write a function for adding a new list item in the second unordered list.
+      */
+
+      const addToTheSecond = function (content) {
+        let uList = document.getElementById("secondList");
+        //uList[1].innerHTML += uList[1].innerHTML + content
+        console.log(uList);
+        let newItem = document.createElement('li');
+        newItem.innerHTML = content;
+        uList.appendChild(newItem);
+      };
+
+      addToTheSecond('testing')
+
+      /* EXERCISE 6
+       Write a function for adding a second paragraph to the first div.
+      */
+
+      const addParagraph = function (content) {
+        let firstDiv = document.querySelector("div")
+
+        let newParagraph = document.createElement('p');
+        newParagraph.innerHTML = content;
+        firstDiv.appendChild(newParagraph)
+      };
+
+      addParagraph('This is another JS injection')
+
+      /* EXERCISE 7
+       Write a function for making the first unordered list disappear.
+      */
+
+      const firstUlDisappear = function () {
+        let uList = document.getElementById("firstList");
+        uList.style.visibility = 'hidden';
+      };
+
+      firstUlDisappear();
+
+      /* EXERCISE 8
+       Write a function for making the background of every unordered list green.
+      */
+
+      const paintItGreen = function () {
+        let uList = document.querySelectorAll("ul");
+        uList.forEach(list => {
+          list.style.backgroundColor = 'green';
+        });
+      };
+
+      paintItGreen();
+
+      /* EXERCISE 9
+       Make the heading of the page change color every time the user clicks on it.
+      */
+
+      const makeItClickable = function () {
+        
+      };
+
+      /* EXERCISE 10
+       Change the footer text with something else when the user clicks on it.
+      */
+
+      const changeFooterText = function () {
+        //
+      };
+
+      /* EXERCISE 11
+       Attach an event listener to the input field in the page for console logging its value just after any keystroke.
+      */
+
+      const inputField = document.getElementById("input-field");
+      // ...
+
+      /* EXERCISE 12
+       Create a welcome alert message when the page successfully loads.
+      */
+
+      window.onload = function () {
+        //
+      };
+
+      /* EXERCISE 13
+       Use HTML5 tags to properly provide semantic meaning to the different portions of the page.
+      */
+    </script>
+  
+
+<div id="forest-ext-shadow-host"></div></body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
