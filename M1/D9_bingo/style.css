@@ -48,10 +48,21 @@ body {
     color: #3e3e3e;
 }
 
+.users-playroom {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .userboard-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    border: 1px solid #e6e5e5;
     max-width: 40%;
-    margin: 0 auto;
+    margin: auto;
+}
+
+.userboard-name {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 1;
 }

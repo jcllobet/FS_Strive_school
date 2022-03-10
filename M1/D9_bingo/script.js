@@ -1,4 +1,6 @@
-const generateBinogBoard = (num) => {
+const USERNAMELIST = ['John', 'Maria', 'Alex', 'Marta', 'Job', 'Edgar', 'Albert', 'Aleix', 'Anna', 'Diego'];
+
+const generateBingoBoard = (num) => {
     let bingoContainer = document.getElementsByClassName('bingo-container')[0]
     for (let i = 1; i <= num; i++) {
         let bingoNumber = document.createElement('div')
@@ -7,10 +9,6 @@ const generateBinogBoard = (num) => {
         bingoContainer.appendChild(bingoNumber)
     }
 }
-
-generateBinogBoard(76)
-
-let numbersGenerated = []
 
 const generateRandomNum = () => {
     let numberDisplay = document.getElementById('displayRandomNum')
@@ -22,12 +20,9 @@ const generateRandomNum = () => {
     }
     numberDisplay.innerHTML = `<p>${randomNum}</p>`
     numbersGenerated.push(randomNum)
-    unHighlightRandomNum()
+    //unHighlightRandomNum()
     highlightRandomNum(randomNum)
 }
-
-let bingoNumbers = document.getElementsByClassName('bingo-number')
-let userNumbers = document.getElementsByClassName('user-number')
 
 const unHighlightRandomNum = () => {
     for (bingoNum of bingoNumbers) {
@@ -59,17 +54,28 @@ const highlightRandomNum = (number) => {
     }
 }
 
-let randonNumBtn = document.getElementById('numGenerator')
-randonNumBtn.addEventListener('click', generateRandomNum)
+const createUserBoard = (user) => {
+    let target = document.getElementsByClassName('users-playroom')[0];
 
-const createUserBoard = () => {
-    let userContainer = document.getElementsByClassName('userboard-container')[0];
+    
+
+    let userContainer = document.createElement('div');
+    userContainer.classList.add('userboard-container');
+    target.appendChild(userContainer);
+
+    let title = document.createElement('h3');
+    title.classList.add('userboard-name')
+    title.innerText = `${user}'s board`;
+    userContainer.appendChild(title);
+
     let alreadyGenerated = [];
+
     for (let i = 0; i <= 24; i++) {
         let userBoard = document.createElement('div');
-        userBoard.classList.add('user-number');
+        userBoard.classList.add('user-number')
         if (i===12) {
             userBoard.innerText = 'FREE';
+            userBoard.classList.add('highlighted')
         } else {
             let userRandomNum = Math.ceil(Math.random() * 76);
 
@@ -84,6 +90,29 @@ const createUserBoard = () => {
         }
         userContainer.appendChild(userBoard);
     }
+    
 }
 
-createUserBoard()
+let numbersGenerated = [];
+
+let bingoNumbers = document.getElementsByClassName('bingo-number');
+let userNumbers = document.getElementsByClassName('user-number');
+let randonNumBtn = document.getElementById('numGenerator');
+
+function onLoad() {
+    generateBingoBoard(76);
+    
+    let users = parseInt(window.prompt("Input a number of users (Max 10):","1"));
+    if (users > 10) {
+        users = 10;
+    }
+
+    for (let i = 0; i < users; i++) {
+        let user = USERNAMELIST[i]
+        createUserBoard(user)
+    }
+    
+    randonNumBtn.addEventListener('click', generateRandomNum);
+}
+
+window.onload = onLoad // Without brackets because we don't want to call it during the assignment
