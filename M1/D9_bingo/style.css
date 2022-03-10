@@ -1,0 +1,57 @@
+body {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    background-color: #3e3e3e;
+    color: #e6e5e5;
+}
+
+.bingo-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    border: 1px solid #e6e5e5;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.bingo-number {
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #e6e5e5;
+    margin: 0.5rem;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.user-number {
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #e6e5e5;
+    margin: 0.3rem;
+    font-size: large;
+    font-weight: bold;
+}
+
+#numGenerator {
+    margin: 1rem;
+    background-color: rgba(9, 116, 151, 0.774);
+    color: #e6e5e5;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.highlighted {
+    background-color: #e6e5e5;
+    color: #3e3e3e;
+}
+
+.userboard-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid #e6e5e5;
+    max-width: 40%;
+    margin: 0 auto;
+}
