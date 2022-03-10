@@ -14,6 +14,7 @@ ASSIGNMENT RULES
 
 let area = (l1, l2) => l1 * l2;
 
+console.log(area(4,3));
 /* EXERCISE 2
  Write a function called "crazySum" which receives two integers as parameters.
  It should return the sum of those two values, but if the two values are the same then it should return their sum multiplied by 3.
@@ -27,6 +28,7 @@ let crazySum = (a, b) => {
     }
 };
 
+console.log(crazySum(3,3))
 /* EXERCISE 3
  Write a function called "crazyDiff" that computes the absolute difference between a given number and 19.
  It should return triple their absolute difference if the given number is greater than 19.
@@ -40,6 +42,8 @@ let crazyDiff = (a) => {
     }
 };
 
+console.log(crazyDiff(3));
+
 /* EXERCISE 4
  Write a function called "boundary" which accept an integer parameter n and returns true if n is within 20 and 100 (included) or if n it's equal to 400.
 */
@@ -51,6 +55,8 @@ let boundary = (n) => {
         return false;
     }
 };
+
+console.log("ex 4", boundary(3));
 
 /* EXERCISE 5
  Write a function called "strivify" which accepts a string as a parameter.
@@ -65,6 +71,8 @@ let strivify = (str) => {
     }
 };
 
+console.log(strivify("Hello")); // Strive Hello
+
 /* EXERCISE 6
  Write a function called "check3and7" which accepts a positive number as a parameter and checks if it is a multiple of 3 or a multiple of 7.
  HINT: Modulus Operator
@@ -78,6 +86,8 @@ let check3and7 = (n) => {
     }
 };
 
+console.log(check3and7(20));
+
 /* EXERCISE 7
  Write a function called "reverseString" which programmatically reverses a given string (es.: Strive => evirtS).
 */
@@ -89,6 +99,8 @@ let reverseString = (str) => {
     }
     return newStr;
 };
+
+console.log(reverseString("Strive"));
 
 /* EXERCISE 8
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
@@ -105,6 +117,8 @@ let upperFirst = (str) => {
     }
     return newStr;
 };
+
+console.log(upperFirst('hello world'));
 
 /* EXERCISE 9
  Write a function called "cutString" which creates a new string without the first and last character of a given string passed as a parameter.
@@ -132,6 +146,7 @@ function giveMeRandom(n){
     return arr;
 }
 
+console.log(giveMeRandom(5));
 
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.

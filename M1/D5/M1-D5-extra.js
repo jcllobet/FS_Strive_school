@@ -6,8 +6,6 @@ let { giveMeRandom } = require('./M1-D5.js')
  The function should return the sum of just the numbers bigger than 5.
 */
 
-
-
 let checkArray = (arr) => {
     console.log(`Original Array: ${arr}`)
     return arr.filter(num => num > 5)
@@ -162,6 +160,7 @@ let longest = (arr) => {
 }
 
 console.log(longest(stringArray))
+
 /* EXTRA 9
  Write a function to create a very simple anti spam filter for your mailbox. The function takes a string emailContent, and returns a boolean.
  The function should return true if the emailContent string does not contain the words SPAM or SCAM.
@@ -199,7 +198,13 @@ console.log(`Faster test: ${isFastSpam(emailContent, spamList)}`)
  Write a function that receives a date as a parameter and calculates the number of days passed since the given date.
 */
 
-/* WRITE YOUR ANSWER HERE */
+let calculateDaysSince = (date) => {
+    let today = new Date();
+    let days_diff = (today.getTime() - date.getTime())/(86000*1000)
+    return `${Math.round(days_diff)} have passed since ${date.toLocaleDateString('en-GB')} and ${today.toLocaleDateString('en-GB')}` ;
+}
+
+console.log(calculateDaysSince(new Date("06/30/2019")));
 
 /* EXTRA 11
  Write a function called "matrixGenerator" which receives two integers, x and y, as parameters.
@@ -209,8 +214,19 @@ console.log(`Faster test: ${isFastSpam(emailContent, spamList)}`)
  "10","11","12"]
 */
 
-/* WRITE YOUR ANSWER HERE */
+let matrixGenerator = (rows, columns) => {
+    let matArr = []
+    for (let row = 0; row < rows; row ++){
+        let rowArr = [];
+        for (let col = 0; col < columns; col ++){
+            rowArr.push(`${row}${col}`);
+        }
+        matArr.push(rowArr);
+    }
+    return matArr
+}
 
+console.log(matrixGenerator(2,3));
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
 */

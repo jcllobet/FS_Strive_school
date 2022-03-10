@@ -74,6 +74,7 @@ const average = (a, b) => {
     return (a + b) / 2;
 }
 
+console.log(average(4,5));
 /* EXTRA 6
  Write a piece of code for finding the longest of two given strings.
 */
@@ -82,6 +83,7 @@ const longest = (a, b) => {
     return a.length > b.length ? a : b;
 }
 
+console.log(longest('aaa', 'a'));
 /* EXTRA 7
  Write a piece of code for checking if a given value is a integer or not.
 */
@@ -89,6 +91,8 @@ const longest = (a, b) => {
 const isInteger = (value) => {
     return (type(value) === 'number' && value % 1 === 0);
 }
+
+console.log(isInteger('5'));
 /* EXTRA 8
  Write a piece of code for calculating a certain percentage of a given number.
  (Ex.: the 20% of 400 is 80)
@@ -98,6 +102,7 @@ const percentage = (number, percentage) => {
     return number * percentage / 100;
 }
 
+console.log(percentage(400,20));
 /* EXTRA 9
  Write a piece of code for checking if a given number is even or odd.
 */
@@ -106,6 +111,7 @@ const isEvenOrOdd = (number) => {
     return (number % 2 === 0) ? 'even' : 'odd';
 }
 
+console.log(isEvenOrOdd(5));
 /* WHEN YOU ARE FINISHED
  Upload the .js file on Eduflow before 5PM CET. In the next days we'll also learn how to use GIT!
 */

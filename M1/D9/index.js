@@ -25,9 +25,7 @@ let createDays = (days) => {
             newDiv.classList.add("day");
         }
         
-        let numString = day.toString();
-        let paddedNum = zeroPad(numString);
-        let textNode = document.createTextNode(`${paddedNum}`);
+        let textNode = document.createTextNode(`${day}`);
         
 
         // add the text node to the newly created div

@@ -12,42 +12,39 @@ ASSIGNMENT RULES
  Enumerate and describe the main datatypes in JavaScript. Try to explain the concepts as you were speaking to a 12 years old.
 */
 
-// Numbers: A number
-// Boolean: True or false
-// String: Text
-// Undefined: Declared but not defined
-// Null: Declared and set to empty.
-// Object: Can hold a collection of properties set by the user (creating its own type)
+/* WRITE YOUR ANSWER HERE */
 
 /* EXERCISE 2
  Try to describe what a variable is, in your own words.
 */
 
-// A way to store, modify and update data in during the execution of the program.
+/* WRITE YOUR ANSWER HERE */
 
 /* EXERCISE 3
  Write the code to execute an addition (a sum) of the numbers 12 and 20.
 */
 
-console.log(12 + 20);
+let result = 12 + 20
 
 /* EXERCISE 4
  Create a variable named x and assign to it the number 12.
 */
 
-let x = 12; 
+let x = 12
 
 /* EXERCISE 5
  Create a variable called name and assign to it the string "John Doe".
 */
 
-let name = "John Doe";
+let name = "John Doe"
+// let name = 'John Doe'
+// let name = `John Doe`
 
 /* EXERCISE 6
  Execute a subtraction between the number 12 and the variable x you declared before (which is storing the value 12).
 */
 
-console.log(12 - x);
+let ex6result = 12 - x
 
 /* EXERCISE 7
  Create two variables: name1 and name2. Assign to name1 the string "john", and to name2 the string "John" (this one has a capital J!)
@@ -55,31 +52,89 @@ console.log(12 - x);
  Finally, verify that the equality between name1 and name2 becomes true if both are lowercase (without changing the value of name2).
 */
 
-let name1 = "john";
-let name2 = "John";
-console.log(name1 === name2);
-console.log(name1 === name2.toLocaleLowerCase());
+let name1 = "john"
+let name2 = "John"
+console.log(name1 === name2)
+console.log(name1.toLowerCase() === name2.toLowerCase())
 
 /* EXERCISE 8
  Create a variable named x, and assign to it a numeric value less than 10.
  Write the code to print the literal value of x (ex.: if x is 1, it should print "one", if x is 5 it should print "five" etc.).
 */
 
-let y = 1;
+x = 6
+if (x === 1) {
+  console.log("one")
+} else if (x === 2) {
+  console.log("two")
+} else if (x === 3) {
+  console.log("three")
+} else if (x === 4) {
+  console.log("four")
+} else if (x === 5) {
+  console.log("five")
+} else if (x === 6) {
+  console.log("six")
+} else if (x === 7) {
+  console.log("seven")
+} else if (x === 8) {
+  console.log("eight")
+} else if (x === 9) {
+  console.log("nine")
+} else {
+  console.log("not a valid number!")
+}
 
-let literalDictionary = { 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten" };
+switch (x) {
+  case 1:
+    console.log("one")
+    break
+  case 2:
+    console.log("two")
+    break
+  case 3:
+    console.log("three")
+    break
+  case 4:
+    console.log("four")
+    break
+  case 5:
+    console.log("five")
+    break
+  case 6:
+    console.log("six")
+    break
+  case 7:
+    console.log("seven")
+    break
+  case 8:
+    console.log("eight")
+    break
+  case 9:
+    console.log("nine")
+    break
+  case 10:
+    console.log("ten")
+    break
 
-console.log(literalDictionary[y]);
-
+  default:
+      console.log("number is either < 1 or > 10");
+    break
+}
 
 /* EXERCISE 9
  [Extra] Assign a value to a variable using a ternary operator (this topic has not been covered during lesson yet,
  try to search it by yourself, tomorrow morning we'll discuss it together!)
 */
 
-let isGreaterThanTen = (value) => {
-    return  (literalDictionary.hasOwnProperty(value) ? '10 or less' : "greater than 10");
-}
+let ternaryExample = x > 10 ? true : false
+// if (x > 10){
+//     ternaryExample = true
+// }
+// else{
+//     ternaryExample = false
+// }
 
-console.log(isGreaterThanTen(x));
-console.log(isGreaterThanTen(y));
+/* WHEN YOU ARE FINISHED
+ Upload the .js file on Eduflow before 5PM CET. In the next days we'll also learn how to use GIT!
+*/

@@ -151,8 +151,6 @@ console.log(noVowelSent)
  Write a piece of code for increasing all the numerical values in a array by 1.
 */
 
-
-
 let oneMore = (arr) => {
     newArr = []
     arr.forEach(x => {
