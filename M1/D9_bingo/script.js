@@ -1,5 +1,13 @@
 const USERNAMELIST = ['John', 'Maria', 'Alex', 'Marta', 'Job', 'Edgar', 'Albert', 'Aleix', 'Anna', 'Diego'];
 
+
+
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
+let bingoNumbers = document.getElementsByClassName('bingo-number');
+let userNumbers = document.getElementsByClassName('user-number');
+let randonNumBtn = document.getElementById('numGenerator');
+
 const generateBingoBoard = (num) => {
     let bingoContainer = document.getElementsByClassName('bingo-container')[0]
     for (let i = 1; i <= num; i++) {
@@ -10,18 +18,51 @@ const generateBingoBoard = (num) => {
     }
 }
 
-const generateRandomNum = () => {
-    let numberDisplay = document.getElementById('displayRandomNum')
-    
-    let randomNum = Math.ceil(Math.random() * 76)
-    
-    while (numbersGenerated.includes(randomNum)) {
-        randomNum = Math.ceil(Math.random() * 76)
+let userHits = (userArr) => {
+    let userHitsObj = {};
+    for (let user of userArr) {
+        for (let userNum of user.children) {
+            if (userNum.classList.contains('highlighted')) {
+                userHits++;
+            }
+        }
     }
-    numberDisplay.innerHTML = `<p>${randomNum}</p>`
-    numbersGenerated.push(randomNum)
-    //unHighlightRandomNum()
-    highlightRandomNum(randomNum)
+    return userHits;
+}
+
+const countUserHits = (userArr) => {
+    let userHits = {};
+    for (let user of userArr) {
+        for (let userNum of user.children) {
+            if (userNum.classList.contains('highlighted')) {
+                userHits++;
+            }
+        }
+    }
+    return userHits;
+}
+
+const generateRandomNum = async () => {
+    let numbersGenerated = [];
+
+    winner = false;
+    while (!winner){
+        await delay(500);
+        let numberDisplay = document.getElementById('displayRandomNum')
+        let randomNum = Math.ceil(Math.random() * 76)
+        
+        while (numbersGenerated.includes(randomNum)) {
+            randomNum = Math.ceil(Math.random() * 76)
+        }
+        numberDisplay.innerHTML = `<p>${randomNum}</p>`
+        numbersGenerated.push(randomNum)
+        numbersGenerated.sort((a, b) => a - b);
+        let numList = document.querySelector('.num-list');
+        numList.innerHTML = `Numbers selected: ${numbersGenerated.join(', ')}`
+        //unHighlightRandomNum()
+        highlightRandomNum(randomNum)
+    }
+    
 }
 
 const unHighlightRandomNum = () => {
@@ -57,8 +98,6 @@ const highlightRandomNum = (number) => {
 const createUserBoard = (user) => {
     let target = document.getElementsByClassName('users-playroom')[0];
 
-    
-
     let userContainer = document.createElement('div');
     userContainer.classList.add('userboard-container');
     target.appendChild(userContainer);
@@ -93,16 +132,11 @@ const createUserBoard = (user) => {
     
 }
 
-let numbersGenerated = [];
-
-let bingoNumbers = document.getElementsByClassName('bingo-number');
-let userNumbers = document.getElementsByClassName('user-number');
-let randonNumBtn = document.getElementById('numGenerator');
-
 function onLoad() {
     generateBingoBoard(76);
     
-    let users = parseInt(window.prompt("Input a number of users (Max 10):","1"));
+    let users = 5;  
+    //let users = parseInt(window.prompt("Input a number of users (Max 10):","1"));
     if (users > 10) {
         users = 10;
     }

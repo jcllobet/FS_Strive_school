@@ -66,3 +66,12 @@ body {
     grid-row-start: 1;
     grid-row-end: 1;
 }
+
+.num-list {
+    margin-left: 10%;
+    text-align: left;
+}
+
+.simulation-container {
+    max-width: 90%;
+}
