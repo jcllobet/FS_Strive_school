@@ -13,6 +13,7 @@ let person = {
 delete person.email;
 
 console.log(person);
+
 //Create an array with 10 strings in it
 let longArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
@@ -20,7 +21,6 @@ let only10 = longArr.slice(0, 10);
 
 //Print in the console every string from the previous array
 only10.forEach(str => console.log(str));
-
 
 // Create an array with 100 random numbers in it
 
@@ -97,6 +97,7 @@ const longestArray = (arr1, arr2) => {
 }
 
 console.log(longestArray(arrOfArr, fasterArr))
+
 //Create a function that gets 2 arrays of numbers as parameters and returns the one with the higher sum of values
 
 const sumNumArr = (arr1, arr2) => {
@@ -224,7 +225,6 @@ const initializeListeners = (query, type) => {
         if (target[i].getAttribute('listener') !== true) {
             target[i].addEventListener(type, displayAttributeCallback)
         }
-        
     }
 }
 
