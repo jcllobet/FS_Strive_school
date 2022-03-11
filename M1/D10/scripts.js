@@ -98,25 +98,115 @@ console.log(longestArray(arrOfArr, fasterArr))
 //Create a function that gets 2 arrays of numbers as parameters and returns the one with the higher sum of values
 
 const sumNumArr = (arr1, arr2) => {
-    let sumArr1 = arr1.reduce((accumulator, currentVal) => accumulator + currentVal)
-    let sumArr2 = arr2.reduce((accumulator, currentVal) => accumulator + currentVal)
+    let sumArr1 = arr1.reduce((accumulator, currentVal) => accumulator + currentVal);
+    let sumArr2 = arr2.reduce((accumulator, currentVal) => accumulator + currentVal);
     return sumArr1 > sumArr2 ? arr1 : arr2;
 }
 
-console.log(sumNumArr(fasterArr, randArr))
+console.log(sumNumArr(fasterArr, randArr));
 
 //             DOM EXERCISES
 
 //             31) Get the element with an id of "container" from the page
+
+let container = document.getElementById('container');
+
+console.log(container);
 //             32) Get every <td> element from the page
+
+let tds = document.getElementsByTagName('td');
+
 //             33) Use a loop for printing the text inside of every <td> element in the page
+
+const printingElementsFromCollection = (collection) => {
+    for (let i = 0; i<collection.length; i++) {
+        if (collection[i].innerText !== ''){
+            console.log(collection[i].innerText);
+        }
+        
+    }
+}
+
+printingElementsFromCollection(tds);
+
 //             34) Write a function to change the heading of the page
+
+const changeHeading = (newText) => {
+    let heading = document.querySelector('h1');
+    heading.innerText = newText;
+}
+
+changeHeading('Changed the heading');
 //             35) Write a function to add an extra row to the table
+
+const addRow = (text) => {
+    let tbodyRef = document.querySelector('table').getElementsByTagName('tbody')[0];
+    // Insert a row at the end of table
+    let newRow = tbodyRef.insertRow(tbodyRef.rows.length);
+    newRow.innerHTML = text;
+}
+
+addRow('New Fruit');
 //             36) Write a function to add a class of "test" to each row in the table
+
+const addClass = (classname) => {
+    let tbodyRef = document.querySelector('table').getElementsByTagName('tbody')[0];
+    for (let i = 0; i < tbodyRef.children.length; i++) {
+        if(tbodyRef.children[i].tagName.toLowerCase() === 'tr'){
+            tbodyRef.children[i].classList.add(classname);
+        }
+    }
+    
+}
+
+addClass('test');
+
 //             37) Write a function to add a red background to every link in the page
-//             38) Console log "Page loaded" when the page is correctly loaded
+
+const addBackground = (color, target) => {
+    let allLinks = document.querySelectorAll(target)
+    
+    for (let i = 0; i < allLinks.length; i++) {
+        allLinks[i].style.backgroundColor = color;
+    }
+    
+}
+
+addBackground('lightcoral', 'a')
+
+
+
 //             39) Write a function to add new items to a unordered list
+
+const addNewItems = (newItemArr) => {
+    let firstUList = document.querySelector('ul');
+    for (let i = 0; i < newItemArr.length; i++) {
+        let newItem = document.createElement('li');
+        newItem.innerText = newItemArr[i];
+        firstUList.appendChild(newItem)
+    }
+}
+
+addNewItems(['Pear', 'Mango']);
 //             40) Write a function to empty a list
+
+// interesting security flaws https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+
+
+let emptyText = (target) => {
+    let toEmpty = document.querySelector(target)
+    console.log(toEmpty.hasOwnProperty('length'))
+    if (toEmpty.hasOwnProperty('length')){
+        for(let i=0; i<toEmpty.length; i++) {
+            toEmpty[i].innerHTML = '';
+        }
+    } else {
+        console.log(toEmpty.innerHTML)
+        toEmpty.innerHTML = '';
+    }
+}
+
+emptyText('ul')
 
 //             EXTRA EXERCISES
 
@@ -130,3 +220,14 @@ console.log(sumNumArr(fasterArr, randArr))
 //             48) Add automatically a pink border to a cell when the mouse hovers it
 //             49) Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
 //             50) Write a function to remove the last table from the page
+
+
+//             38) Console log "Page loaded" when the page is correctly loaded
+
+function properlyLoaded() {
+    console.log('Properly Loaded')
+}
+
+window.onload = function() {
+    properlyLoaded();
+}
