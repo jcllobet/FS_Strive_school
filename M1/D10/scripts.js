@@ -1,3 +1,5 @@
+window.onload = onLoad
+
 let x = "John";
 let y = "Doe";
 console.log(`${x} ${y}`);
@@ -216,10 +218,13 @@ emptyText('ul')
 
 const initializeListeners = (query, type) => {
     let target = document.querySelectorAll(query)
-    if (target.hasOwnProperty('length')){
-        for(let i=0; i<target.length; i++) {
-            target[i].addEventListener(type)
+    console.log(target.length)
+    for(let i=0; i<target.length; i++) {
+        console.log(target[i])
+        if (target[i].getAttribute('listener') !== true) {
+            target[i].addEventListener(type, displayAttributeCallback)
         }
+        
     }
 }
 
@@ -227,9 +232,11 @@ const displayAttributeCallback = (event) => {
     let attributeValue = event.target.getAttribute('href');
     console.log(attributeValue);
     alert(attributeValue);
-    
-} 
+}
+
 //             42) Create a button that will hide every image on the page when clicked
+
+
 //             43) Create a button that will hide or show the table on the page when clicked
 //             44) Write a function for calculating the sum of every number inside all the table cells (if their content is numeric)
 //             45) Delete the last letter from the heading each time the user clicks on it
@@ -243,13 +250,8 @@ const displayAttributeCallback = (event) => {
 //             38) Console log "Page loaded" when the page is correctly loaded
 
 function onLoad() {
+    initializeListeners('a', 'mouseover');
     console.log('Properly Loaded');
-
-    initializeListeners('a', 'mouseover', displayAttributeCallback);
-
-    test.addEventListener("mouseover", function(event) {
-        alert("mouse over test!")
-        , false});
 }
 
 //TODO: https://developer.mozilla.org/en-US/docs/Web/Events/Event_handlers
@@ -261,9 +263,3 @@ function onLoad() {
 //       /* handle a full screen toggle error */
 //     }
 // }
-
-let test = document.getElementById("test");
-
-
-
-window.onload = onLoad
