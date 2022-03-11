@@ -58,7 +58,7 @@ const checkWinner = () => {
 const generateRandomNum = async () => {
 
     while (winnerArr.length < 1) {
-        await delay(10);
+        await delay(50);
         let numberDisplay = document.getElementById('displayRandomNum')
         let randomNum = Math.ceil(Math.random() * 76)
         

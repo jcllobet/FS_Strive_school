@@ -1,0 +1,57 @@
+/* CSS EXERCISES
+            18) Create a class to hide a piece of content
+            20) Add a dotted red border to each <tr> (note: <tr> does not accept a border property) */
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+}
+
+a {
+    color: aqua;
+}
+
+table {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+td {
+    border: 1px solid lightgreen;
+}
+
+tr.header-border {
+    outline: thin dotted red;
+}
+
+p {
+    margin: 10px;
+}
+
+.flag {
+    max-width: 20px;
+    max-height: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.border {
+    border-bottom: 1px solid gray;
+}
+
+.increase-font {
+    font-size: larger;
+    font-weight: bolder;
+    color: aqua;
+}
+
+.hidden {
+    display: none;
+}
