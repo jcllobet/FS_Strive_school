@@ -211,6 +211,24 @@ emptyText('ul')
 //             EXTRA EXERCISES
 
 //             41) Add an eventListener to show an alert when the cursor hovers a link, displaying its href property
+
+// Resources: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#the_event_listener_callback
+
+const initializeListeners = (query, type) => {
+    let target = document.querySelectorAll(query)
+    if (target.hasOwnProperty('length')){
+        for(let i=0; i<target.length; i++) {
+            target[i].addEventListener(type)
+        }
+    }
+}
+
+const displayAttributeCallback = (event) => {
+    let attributeValue = event.target.getAttribute('href');
+    console.log(attributeValue);
+    alert(attributeValue);
+    
+} 
 //             42) Create a button that will hide every image on the page when clicked
 //             43) Create a button that will hide or show the table on the page when clicked
 //             44) Write a function for calculating the sum of every number inside all the table cells (if their content is numeric)
@@ -224,10 +242,28 @@ emptyText('ul')
 
 //             38) Console log "Page loaded" when the page is correctly loaded
 
-function properlyLoaded() {
-    console.log('Properly Loaded')
+function onLoad() {
+    console.log('Properly Loaded');
+
+    initializeListeners('a', 'mouseover', displayAttributeCallback);
+
+    test.addEventListener("mouseover", function(event) {
+        alert("mouse over test!")
+        , false});
 }
 
-window.onload = function() {
-    properlyLoaded();
-}
+//TODO: https://developer.mozilla.org/en-US/docs/Web/Events/Event_handlers
+
+// function eventHandler(event) {
+//     if (event.type == 'mouseover') {
+//         displayAttributeCallback();
+//     } else /* fullscreenerror */ {
+//       /* handle a full screen toggle error */
+//     }
+// }
+
+let test = document.getElementById("test");
+
+
+
+window.onload = onLoad
