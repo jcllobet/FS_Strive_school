@@ -24,13 +24,9 @@ only10.forEach(str => console.log(str));
 
 // Create an array with 100 random numbers in it
 
-//Using Array.from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
-let randomArray = Array.from({length: 100}, (v, i) => Math.floor(Math.random()*100))
-
-console.log(randomArray.length)
-
 // the traditional way
 
+// Create an array with 100 random numbers in it
 let randArr = []
 
 const AddToArr = (arr, num) => {
@@ -46,25 +42,30 @@ AddToArr(randArr, 100);
 
 console.log(randArr.length);
 
-// traditional way but faster https://stackoverflow.com/questions/3895478/does-javascript-have-a-method-like-range-to-generate-a-range-within-the-supp
+//Using Array.from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+// Create an array with 100 random numbers in it
 
+let randomArray = Array.from({length: 100}, (v, i) => Math.floor(Math.random()*100))
+
+console.log(randomArray.length)
+
+
+
+// traditional way but faster https://stackoverflow.com/questions/3895478/does-javascript-have-a-method-like-range-to-generate-a-range-within-the-supp
+// Create an array with 100 random numbers in it
 let fasterArr = [...Array(100).keys()].map(x => Math.round(Math.random()*100))
 
 console.log(fasterArr)
 
-//Write a function to get the maximum and minimum values from the previously created array
-
-const minMaxVal = (arr) => {
+//Write a function to get the maximum and minimum values 
+//from the previously created array
+const minMaxVal3 = (arr) => {
     if (arr.length > 0){
         let dict = {}
         let max = Number.MIN_VALUE;
         let min = Number.MAX_VALUE;
         arr.forEach(num => {
-            if (num > max) {
-                max = num;
-            } else if (num < min) {
-                min = num;
-            }
+            num > max ? max = num : min = num; 
         });
         dict['max'] = max;
         dict['min'] = min;
@@ -74,7 +75,37 @@ const minMaxVal = (arr) => {
     }
     
 }
+
+
+console.log(minMaxVal3(fasterArr))
+
+//Write a function to get the maximum and minimum values 
+//from the previously created array
+const minMaxVal = (arr) => {
+    let max = Number.MIN_VALUE;
+    let min = Number.MAX_VALUE;
+    arr.forEach(num => {
+        num > max ? max = num : min = num; 
+    });
+    return [max, min]
+}
 console.log(minMaxVal(fasterArr))
+
+//Write a function to get the maximum and minimum values 
+//from the previously created array
+const minMaxVal2 = (arr) => {
+    if (arr.length > 0){
+        let max = Number.MIN_VALUE;
+        let min = Number.MAX_VALUE;
+        arr.forEach(num => {
+            num > max ? max = num : min = num; 
+        });
+        return [max, min]
+    } else {
+        return 'Please input a valid array'
+    }
+}
+console.log(minMaxVal2(fasterArr))
 
 //Create an array of arrays, in which every array has 10 random numbers
 
@@ -250,7 +281,7 @@ const displayAttributeCallback = (event) => {
 //             38) Console log "Page loaded" when the page is correctly loaded
 
 function onLoad() {
-    initializeListeners('a', 'mouseover');
+    //initializeListeners('a', 'mouseover');
     console.log('Properly Loaded');
 }
 
