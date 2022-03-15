@@ -1,0 +1,83 @@
+/* <!-- EXERCISE 1
+For every Album we'd like to have a consistent style.
+Therefore you should create a class for each of the following elements:
+- The album container
+- The album cover
+- The album title
+- The album group / singer / dj
+- The album genre
+- The album duration
+- etc
+...to make sure you give every album the same consistent appearance. --> */
+
+.section-title {
+    margin: 0px auto;
+}
+
+.logo-size {
+    width: 25px;
+}
+
+.album-container {
+    background-color: lightgrey;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.album-reviews {
+    background-color: lightcyan;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.album-shame {
+    background-color: lightcoral;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.album-cover {
+    opacity: 0.5;
+}
+
+.album-cover:hover {
+    opacity: 1;
+}
+
+.album-title {
+    font-weight: 600;
+}
+
+.album-group {
+    font-style: italic;
+}
+
+.album-genre {
+    font-weight: 300;
+}
+
+.album-genre span {
+    background-color: lightcoral;
+    border-radius: 5px;
+    padding: 0.3em;
+}
+
+.album-duration {
+    font-size: small;
+}
+
+.album-duration span {
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 0.3em;
+}
+
+.album-review {
+    max-height: max-content;
+    height: 100%;
+}

@@ -4,12 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-        crossorigin="anonymous"
-        />
+        <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" 
+        crossorigin="anonymous">
+        <!-- We want our styles to overwritte bootstrap styles, so we import afterwards -->
         <link rel="stylesheet" href="./style.css">
         <title>Document</title>
         <!--
@@ -47,6 +46,25 @@
             Implement a navigation bar using the bootstrap component
             This navigation bar must link every section in your page.
         -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img class='logo-size align-middle' src="./assets/spotify.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Your Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Leaderboard</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
 
         <!-- EXERCISE 3
             Create a responsive section for your favourite albums.
@@ -55,6 +73,55 @@
             - 3 albums per row when you are on a tablet (or a smaller viewport)
             - 2 albums per row when you are on a small screen
         -->
+        <h2 class="container section-title">Favourite Albums:</h2>
+        <div class="container album-container">  
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img class="card-img-top album-cover" src="./assets/cover1.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title album-title">Nevermind</h5>
+                            <p class="card-text album-group">Nirvana</p>
+                            <p class="card-text album-genre"><span>Rock</span></p>
+                            <p class="card-text album-duration"><span>1h 53min</span>, 22 songs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img class="card-img-top album-cover" src="./assets/cover2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title album-title">Retrowave</h5>
+                            <p class="card-text album-group">Black Mamba</p>
+                            <p class="card-text album-genre"><span>Electronic</span></p>
+                            <p class="card-text album-duration"><span>1h 53min</span>, 22 songs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img class="card-img-top album-cover" src="./assets/cover3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title album-title">Anarchy</h5>
+                            <p class="card-text album-group">The Rebels</p>
+                            <p class="card-text album-genre"><span>Punk</span></p>
+                            <p class="card-text album-duration"><span>1h 53min</span>, 22 songs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img class="card-img-top album-cover" src="./assets/cover4.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title album-title">Upside Down</h5>
+                            <p class="card-text album-group">tyler</p>
+                            <p class="card-text album-genre"><span>Hip-hop</span></p>
+                            <p class="card-text album-duration"><span>1h 53min</span>, 22 songs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- EXERCISE 4
             Create a section for the album reviews.
@@ -68,10 +135,66 @@
             - ... And whatever you think it's interesting about it!
         -->
 
+        <h2 class="container section-title">Album Reviews:</h2>
+        <div class="container album-reviews">
+            <div class="row row-eq-height">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">   
+                    <div class="card">
+                        <img class="card-img-top album-cover" src="./assets/cover1.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title album-title">Nevermind</h5>
+                            <p class="card-text album-group">Nirvana</p>
+                            <p class="card-text album-genre"><span>Rock</span></p>
+                            <p class="card-text album-duration"><span>1h 53min</span>, 22 songs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-8 col-lg-9">
+                    <div class="card album-review">
+                        <h5 class="card-title album-title">My opinion</h5>
+                        <p class="card-text album-group">Very compelling review</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- EXERCISE 5
             Worst album list! Choose the albums you dislike or some you think are overrated and list it
             in this "hall of shame" chart! 
         -->
+
+        <h2 class="container section-title">Hall of Shame:</h2>
+        <div class="container album-shame">
+            <div class="row row-eq-height">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top album-cover" src="./assets/nickel1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title album-title">Retrowave</h5>
+                            <p class="card-text album-group">NickelBack</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top album-cover" src="./assets/nickel2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title album-title">Anarchy</h5>
+                            <p class="card-text album-group">NickelBack</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top album-cover" src="./assets/nickel3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title album-title">Upside Down</h5>
+                            <p class="card-text album-group">NickelBack</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- EXERCISE 6
             Do you have any musician / band you admire or you are a fan of?
@@ -106,16 +229,12 @@
                 Add in the footer a field that counts, on page load, how many ALBUMS are present on the page.
             -->
         <script src="./utilities.js"></script>
-        <script
-        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"
-        ></script>
-        <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"
-        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" 
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" 
+        crossorigin="anonymous"></script>
     </body>
 </html>
 
