@@ -8,6 +8,7 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" 
         crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- We want our styles to overwritte bootstrap styles, so we import afterwards -->
         <link rel="stylesheet" href="./style.css">
         <title>Document</title>
@@ -73,7 +74,7 @@
             - 3 albums per row when you are on a tablet (or a smaller viewport)
             - 2 albums per row when you are on a small screen
         -->
-        <h2 class="container section-title">Favourite Albums:</h2>
+        <h2 class="container section-title my-3">Favourite Albums:</h2>
         <div class="container album-container">  
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -135,7 +136,7 @@
             - ... And whatever you think it's interesting about it!
         -->
 
-        <h2 class="container section-title">Album Reviews:</h2>
+        <h2 class="container section-title my-3">Album Reviews:</h2>
         <div class="container album-reviews">
             <div class="row row-eq-height">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">   
@@ -163,10 +164,10 @@
             in this "hall of shame" chart! 
         -->
 
-        <h2 class="container section-title">Hall of Shame:</h2>
+        <h2 class="container my-3">Hall of Shame:</h2>
         <div class="container album-shame">
             <div class="row row-eq-height">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4   ">
                     <div class="card">
                         <img class="card-img-top album-cover" src="./assets/nickel1.jpg" alt="Card image cap">
                         <div class="card-body">
@@ -203,8 +204,8 @@
         -->
 
         <!-- EXERCISE 7
-            Just covers!
-            Create a tapestry of album pictures. Every album picture must be "squared" (use CSS to achieve that).
+        Just covers!
+        Create a tapestry of album pictures. Every album picture must be "squared" (use CSS to achieve that).
             Put at least 20 covers (also repeated) to have a nice tapestry effect and see how Bootstrap handles it.
         -->
       
@@ -212,7 +213,17 @@
         <!-- EXERCISE 8
                 Implement a footer with some information / social links.
             -->
-
+        <footer class="container-fluid footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                        <h5>Contact:</h5>
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
         
         <!-- ############ EXTRA:
         EXERCISE 9
@@ -228,7 +239,7 @@
             EXERCISE 11
                 Add in the footer a field that counts, on page load, how many ALBUMS are present on the page.
             -->
-        <script src="./utilities.js"></script>
+        <script src="./utils.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" 
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
         crossorigin="anonymous"></script>

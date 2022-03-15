@@ -10,10 +10,6 @@ Therefore you should create a class for each of the following elements:
 - etc
 ...to make sure you give every album the same consistent appearance. --> */
 
-.section-title {
-    margin: 0px auto;
-}
-
 .logo-size {
     width: 25px;
 }
@@ -80,4 +76,8 @@ Therefore you should create a class for each of the following elements:
 .album-review {
     max-height: max-content;
     height: 100%;
+}
+
+.inline {
+    display: inline;
 }
