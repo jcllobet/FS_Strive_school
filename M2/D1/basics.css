@@ -1,0 +1,25 @@
+h1 {
+    color: orange;
+    background-color: slategray;
+    font-size: 20px;
+    text-decoration: underline;
+    font-family: arial;
+    text-align: center;
+}
+
+p {
+    color: grey;
+    text-align: left;
+    line-height: 15px;
+    letter-spacing: 1px;
+}
+
+ul {
+    border-bottom: 4px dotted crimson;
+    border-left: 8px dashed crimson;
+}
+
+li {
+    list-style-type: none;
+    text-shadow: 2px 2px lightgray;
+}

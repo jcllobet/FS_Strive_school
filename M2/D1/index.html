@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./basics.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CSS Basics</h1>
+
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quisquam, quidem. Quasi, quidem. Quasi, quidem. 
+    </p>
+
+    <ul>
+        <li>one item</li>
+        <li>two item</li>
+        <li>three item</li>
+    </ul>
+    <!-- FORM + Radio buttons-->
+    <form>
+        <label for="username"> enter username: </label>
+        <input type='text' id='username'>
+        <label for="email"> enter email: </label>
+        <input type='email' id='email'>
+        <br><br>
+        <label for="password"> password: </label>
+        <input type='password' id='password'>
+    
+        <p> Select your age:</p>
+    
+        <input type='radio' name='age' value='0-25' id='opt-1'>
+        <label for="opt-1"> 0-25 </label>
+        <input type='radio' name='age' value='25-55' id='opt-2'>
+        <label for="opt-2"> 25-55 </label>
+        <input type='radio' name='age' value='55+' id='opt-3'>
+        <label for="opt-3"> 55+ </label>
+    </form>
+    <!-- dropdown -->
+    <label for="question"> Security question:</label>
+    <select name="question" id="question">
+        <option value="What is your favorite color?">What is your favorite color?</option>
+        <option value="What is your favorite movie?">What is your favorite movie?</option>
+        <option value="What is your favorite food?">What is your favorite food?</option>
+    </select>
+
+    <label for="answer">Security question answer:</label>
+    <input type="text" id="answer" name="answer">
+
+    <br><br>
+
+    <label for="bio">Your Bio</label>
+    <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+</body>
+</html>
