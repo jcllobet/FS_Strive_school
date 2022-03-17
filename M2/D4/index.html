@@ -121,22 +121,23 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="numberGroupsForm"
+                    <label for="studentListForm"
                         >or add the participating students</label
                     >
                     <textarea
                         class="form-control"
-                        id="numberGroupsForm"
+                        id="studentListForm"
                         rows="5"
                     ></textarea>
                 </div>
                 <div class="form-group">
                     <label for="numberGroupsForm">How many groups?</label>
-                    <textarea
+                    <input
+                        type="number"
                         class="form-control"
                         id="numberGroupsForm"
-                        rows="1"
-                    ></textarea>
+                        placeholder="Enter the number of groups"
+                    />
                 </div>
             </form>
             <div class="side-options">
@@ -163,7 +164,7 @@
         </div>
         <div
             id="main-alert"
-            class="d-none fixed-bottom alert alert-info"
+            class="d-none fixed-bottom alert alert-danger"
             role="alert"
         >
             A simple info alert—check it out!

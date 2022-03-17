@@ -125,7 +125,7 @@ let loopUntil = (num) => {
 }
 
 function getRandomIntInclusive(lowNum, highNum) {
-    let num = Math.round(Math.random() * 10);
+    let num = Math.round(Math.random() * 1000);
     if (num > highNum) {
         num = highNum
     } else if (num < lowNum) {
