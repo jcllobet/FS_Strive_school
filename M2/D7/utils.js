@@ -78,22 +78,38 @@ trimChars('main > div > div > div > p:nth-child(3)');
 
 // EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
 
-const addOlderListener = (btnQuery, blogQuery) => {
+const addNewerListener = (btnQuery) => {
     let target = document.querySelector(btnQuery);
     target.classList.remove('disabled');
+    target.setAttribute('href', '#');
     console.log(target);
-    target.addEventListener('click', addBlogPost(blogQuery));
+    target.addEventListener('click', addBlogPost);
 }
 
-const addBlogPost = (query) => {
-    let target = document.querySelector(query);
-    console.log(target)
+const addBlogPost = () => {
+    let sibling = document.querySelector('main > div > div > div:first-of-type');
+    let parent = sibling.parentElement;
+    console.log(sibling)
     let newPost = document.createElement('div');
+    newPost.classList = sibling.classList;
+    let title = document.createElement('h2');
+    title.textContent = 'New Blog Post';
+    newPost.appendChild(title);
+    parent.insertBefore(newPost, sibling);
 }
 
 // EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
 
-const addNewerListener = () => {
+const addOlderListener = (btnQuery) => {
+    let target = document.querySelector(btnQuery);
+    console.log(target);
+    target.setAttribute('href', '#');
+    target.addEventListener('click', removeBlogPost);
+}
+
+const removeBlogPost = () => {
+    let target = document.querySelector('main > div > div > div:last-of-type');
+    target.remove();
 }
 
 // EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
@@ -103,8 +119,8 @@ const addAlertListener = () => {
 }
 
 const onLoad = () => {
-    addOlderListener('a.btn.btn-outline-secondary.disabled.disabled', 'main > div > div > div:first-of-type');
-    addNewerListener();
+    addNewerListener('a.btn.btn-outline-secondary.disabled');
+    addOlderListener('.blog-pagination > a:first-of-type');
     addAlertListener();
 }
 
