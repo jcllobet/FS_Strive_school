@@ -1,0 +1,155 @@
+/* cyrillic */
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v28/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgEM86xRbPQ.woff2)
+        format("woff2");
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v28/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgEM86xRbPQ.woff2)
+        format("woff2");
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+        U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v28/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgEM86xRbPQ.woff2)
+        format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+        U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v28/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2)
+        format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v28/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgEM86xRbPQ.woff2)
+        format("woff2");
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v28/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgEM86xRbPQ.woff2)
+        format("woff2");
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+        U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v28/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgEM86xRbPQ.woff2)
+        format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+        U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v28/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2)
+        format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+/* Start of own css */
+
+/*
+    EX1) Write a selector to target the h1 in jumbotron
+    EX2) Write a selector to target every children of the navbar
+    EX3) Write a selector to target the "continue reading..." inside the jumbotron
+    EX4) Write a selector to target the first blogpost
+    EX5) Write a selector to target the "even" links in the navbar
+    EX6) Write a selector to target the last blog post
+    EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives )
+    EX8) Write a selector to target the second post author
+    EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly
+    EX10) Write a selector to target the footer
+*/
+
+body > div > div > nav > .text-muted {
+    color: pink;
+}
+
+.jumbotron > div > h1 {
+    color: lightblue;
+}
+
+.jumbotron > div > p > a {
+    color: lightblue !important;
+}
+
+div > div > nav > .text-muted {
+    color: red !important;
+}
+
+main > div > div > div:first-of-type {
+    border: 1px solid red;
+}
+
+body > div > div > nav > a:nth-child(2n) {
+    color: yellowgreen !important;
+}
+
+main > div > div > div:last-of-type {
+    border: 1px solid aqua;
+}
+
+div > aside > div:nth-child(2) > ol > li > a {
+    border: 1px solid green;
+}
+
+main > div > div > div:nth-child(3) > p:first-of-type > a {
+    border: 1px solid pink;
+}
+
+p+p> a[href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/177745180379788.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RCEE6YREN%2F20220322%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20220322T141125Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27index.html&X-Amz-Signature=7b8509518c7df0436e235a14dab20dacb97af3e659da2e126594088157cfb39d#"]
+{
+    border: 3px solid yellow;
+}
+
+body > footer {
+    border: 1px solid blue;
+}
