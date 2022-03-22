@@ -78,14 +78,32 @@ trimChars('main > div > div > div > p:nth-child(3)');
 
 // EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
 
+const addOlderListener = (btnQuery, blogQuery) => {
+    let target = document.querySelector(btnQuery);
+    target.classList.remove('disabled');
+    console.log(target);
+    target.addEventListener('click', addBlogPost(blogQuery));
+}
 
+const addBlogPost = (query) => {
+    let target = document.querySelector(query);
+    console.log(target)
+    let newPost = document.createElement('div');
+}
 
 // EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
 
+const addNewerListener = () => {
+}
+
 // EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
 
-const onLoad () => {
-    addOlderListener();
+const addAlertListener = () => {
+
+}
+
+const onLoad = () => {
+    addOlderListener('a.btn.btn-outline-secondary.disabled.disabled', 'main > div > div > div:first-of-type');
     addNewerListener();
     addAlertListener();
 }

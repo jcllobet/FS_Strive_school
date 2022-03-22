@@ -145,8 +145,9 @@ main > div > div > div:nth-child(3) > p:first-of-type > a {
     border: 1px solid pink;
 }
 
-p+p> a[href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/177745180379788.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RCEE6YREN%2F20220322%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20220322T141125Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27index.html&X-Amz-Signature=7b8509518c7df0436e235a14dab20dacb97af3e659da2e126594088157cfb39d#"]
-{
+p
+    + p
+    > a[href$="Amz-Signature=7b8509518c7df0436e235a14dab20dacb97af3e659da2e126594088157cfb39d#"] {
     border: 3px solid yellow;
 }
 
