@@ -57,17 +57,37 @@ changeJumbotronColumnSize('2', '.jumbotron > div > h1');
 const removeSearchIcon = (query) => {
     let target = document.querySelector(query);
     console.log(target);
-    target.setAttribute('title', '');
+    target.innerHTML = 'fun';
 }
 
-removeSearchIcon('div > header > div > div:nth-child(3) > a > svg[title="Search"]');
+removeSearchIcon('div > header > div > div:nth-child(3) > a > svg > title');
 
 
 // EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
 
+const trimChars = (query) => {
+    let target = document.querySelectorAll(query).forEach(e => {
+        console.log(e.innerText);
+        e.innerHTML = e.innerHTML.substring(0, 50);
+    });
+    
+    //target
+}
+
+trimChars('main > div > div > div > p:nth-child(3)');
+
 // EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
+
+
 
 // EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
 
 // EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
 
+const onLoad () => {
+    addOlderListener();
+    addNewerListener();
+    addAlertListener();
+}
+
+window.onload = onLoad ();
