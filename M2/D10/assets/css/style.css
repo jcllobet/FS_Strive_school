@@ -109,6 +109,10 @@ b {
     color: rgb(107, 0, 139);
 }
 
+.dropdown-toggle::after {
+    /* display: none; */
+}
+
 body > div:last-child > div {
     margin-left: 5px;
     margin-right: 5px;
