@@ -8,6 +8,10 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+body > div:nth-child(2) > svg {
+    padding-right: 5px;
+}
+
 nav > div > ul {
     /* background-color: blue !important; */
 }
@@ -34,6 +38,24 @@ nav > div > ul > li {
 
 .carousel-control-next {
     margin-right: -100px;
+}
+
+.card-img-top {
+    max-height: 110px;
+}
+
+.card-text {
+    color: rgb(131, 129, 129);
+    margin-bottom: 30px;
+}
+
+.icon-price {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-price > span {
+    color: rgb(97, 96, 96);
 }
 
 .self-bg-dark {
@@ -65,4 +87,22 @@ nav > div > ul > li {
     right: 0px;
     background-color: white;
     border-radius: 2px;
+}
+
+#disclaimer {
+    display: flex;
+}
+
+#firstspan {
+    margin-right: 20px;
+    border-right: 1px solid rgb(155, 155, 155);
+    font-size: 13px;
+}
+
+#secondspan svg {
+    color: rgb(107, 0, 139);
+}
+
+b {
+    color: rgb(107, 0, 139);
 }
