@@ -1,0 +1,68 @@
+:root {
+    --main-bg-color: #d8d8d8;
+    --bg-dark: #2c2c2c;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: "Lato", sans-serif;
+}
+
+nav > div > ul {
+    /* background-color: blue !important; */
+}
+
+nav > div > ul > li {
+    /* background-color: red !important; */
+}
+
+.carousel {
+}
+
+.carousel .item {
+    position: relative;
+}
+
+.carousel .item img {
+    width: 33%;
+    height: 33%;
+}
+
+.carousel-control-prev {
+    margin-left: -100px;
+}
+
+.carousel-control-next {
+    margin-right: -100px;
+}
+
+.self-bg-dark {
+    background-color: var(--bg-dark);
+}
+
+.navbar-brand {
+    max-height: 24px;
+    max-width: 25px;
+}
+
+.profile {
+    max-height: 24px;
+    max-height: 24px;
+    border-radius: 50%;
+}
+
+.limited {
+    width: 115px;
+    height: 115px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+.limited > img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: white;
+    border-radius: 2px;
+}
