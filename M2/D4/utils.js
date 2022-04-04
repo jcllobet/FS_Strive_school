@@ -27,6 +27,8 @@ const renderTeams = (studentString, minNum) => {
     let col = document.createElement("div");
     col.classList.add("col-6", "col-md-4", "col-lg-3");
 
+    // Loop through Array, if length is greater than maxStudentsHouse, create new div and reset counter to 0. Else, add to current div.
+
     for (let i = 0; i < studentsArr.length; i++) {
         let House = 0;
         
@@ -71,6 +73,8 @@ const renderTeams = (studentString, minNum) => {
     container.appendChild(row);
 };
 
+
+
 const appendStudent2House = (target) => {
     let studentName = studentsArr[i];
 
@@ -92,29 +96,6 @@ const appendStudent2House = (target) => {
 
     target.appendChild(student);
 };
-
-// if(waitingAssignation > 0){
-//         let studentName = studentsArr.shift();
-
-//         let student = document.createElement('p');
-//         student.classList.add('card-text');
-//         student.innerText = studentName;
-
-//         let toWaitButton = document.createElement('button');
-//         toWaitButton.classList.add('btn', 'btn-primary', 'btn-sm', 'float-right');
-//         toWaitButton.setAttribute("onclick", "removeStudent(this)");
-//         toWaitButton.innerText = '⏲️';
-//         student.appendChild(toWaitButton);
-
-//         let removeButton = document.createElement('button');
-//         removeButton.classList.add('btn', 'btn-danger', 'btn-sm', 'float-right');
-//         removeButton.setAttribute("onclick", "removeStudent(this)");
-//         removeButton.innerText = 'X';
-//         student.appendChild(removeButton);
-
-//         cardBody.appendChild(student);
-//         studentCount++;
-//
 
 const removeStudent = (event) => {
     event.parentNode.remove();
