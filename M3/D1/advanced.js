@@ -98,6 +98,7 @@ const areAnagrams = (str1, str2) => {
 };
 
 console.log(areAnagrams("rail safety", "fairy tales"));
+
 /* 3) ANAGRAMS 2
 
 Given a word and a list of possible anagrams, select the correct sublist.
@@ -107,6 +108,41 @@ Given a word and a list of possible anagrams, select the correct sublist.
     "listen" and a list of candidates like "enlists" "google" "inlets" "banana" the program should return a list containing "inlets".
 */
 
+const allContainedAnagrams = (anagram, wordArr) => {
+    const sortedAnagram = anagram.split("").sort().join("");
+    const charMap = {};
+    const candidates = [];
+
+    for (let j = 0; j < sortedAnagram.length; i++) {
+        let char = sortedAnagram[i];
+        if (charMap[char]) {
+            charMap[char]++;
+        } else {
+            charMap[char] = 1;
+        }
+    }
+    for (let i = 0; i < wordArr.length; i++) {
+        let sortedElement = wordArr[i].split("").sort().join("");
+
+        if (sortedAnagram.length() === sortedElement.length()) {
+            const tempCharMap = {};
+            for (let j = 0; j < sortedElement.length; i++) {
+                let char = sortedElement[i];
+                if (tempCharMap[char]) {
+                    tempCharMap[char]++;
+                } else {
+                    tempCharMap[char] = 1;
+                }
+            }
+
+            if (JSON.stringify(charMap) === JSON.stringify(tempCharMap)) {
+                candidates += sortedElement;
+            }
+        }
+        //mock
+    }
+    return candidates;
+};
 /* 4) PALINDROME
 
 Given a string, return true if the string is a palindrome
@@ -225,8 +261,8 @@ and returns a NxN spiral matrix.
 
 module.exports = {
     maxCharOfStr,
-    // areAnagrams,
-    // allContainedAnagrams,
+    areAnagrams,
+    allContainedAnagrams,
     // isPalindrome,
     // reverseInteger,
     // printSteps,
