@@ -56,8 +56,8 @@ const areAnagrams = (str1, str2) => {
     let sortedStr1 = alphaNumStr1.split("").sort().join("");
     let sortedStr2 = alphaNumStr2.split("").sort().join("");
 
-    console.log(sortedStr1);
-    console.log(sortedStr2);
+    // console.log(sortedStr1);
+    // console.log(sortedStr2);
 
     if (sortedStr1.length !== sortedStr2.length) {
         return false;
@@ -79,15 +79,15 @@ const areAnagrams = (str1, str2) => {
                 charMap2[char] = 1;
             }
         }
-        console.log(charMap1);
-        console.log(charMap2);
+        // console.log(charMap1);
+        // console.log(charMap2);
 
-        console.log(Object.keys(charMap1));
-        console.log(Object.keys(charMap2));
-        console.log(Object.values(charMap1));
-        console.log(Object.values(charMap2));
+        // console.log(Object.keys(charMap1));
+        // console.log(Object.keys(charMap2));
+        // console.log(Object.values(charMap1));
+        // console.log(Object.values(charMap2));
 
-        console.log(Object.keys(charMap1) === Object.keys(charMap2)); //lesson, don't compare to objects directly
+        // console.log(Object.keys(charMap1) === Object.keys(charMap2)); //lesson, don't compare to objects directly
         // checking if both char maps are equal
         if (JSON.stringify(charMap1) === JSON.stringify(charMap2)) {
             return true;
@@ -97,7 +97,7 @@ const areAnagrams = (str1, str2) => {
     }
 };
 
-console.log(areAnagrams("rail safety", "fairy tales"));
+//console.log(areAnagrams("rail safety", "fairy tales"));
 
 /* 3) ANAGRAMS 2
 
@@ -111,38 +111,40 @@ Given a word and a list of possible anagrams, select the correct sublist.
 const allContainedAnagrams = (anagram, wordArr) => {
     const sortedAnagram = anagram.split("").sort().join("");
     const charMap = {};
-    const candidates = [];
+    let candidateArr = [];
 
-    for (let j = 0; j < sortedAnagram.length; i++) {
-        let char = sortedAnagram[i];
+    for (let j = 0; j < sortedAnagram.length; j++) {
+        let char = sortedAnagram[j];
         if (charMap[char]) {
             charMap[char]++;
         } else {
             charMap[char] = 1;
         }
     }
+
     for (let i = 0; i < wordArr.length; i++) {
         let sortedElement = wordArr[i].split("").sort().join("");
-
-        if (sortedAnagram.length() === sortedElement.length()) {
-            const tempCharMap = {};
-            for (let j = 0; j < sortedElement.length; i++) {
-                let char = sortedElement[i];
-                if (tempCharMap[char]) {
-                    tempCharMap[char]++;
-                } else {
-                    tempCharMap[char] = 1;
-                }
-            }
-
-            if (JSON.stringify(charMap) === JSON.stringify(tempCharMap)) {
-                candidates += sortedElement;
+        let tempCharMap = {};
+        console.log(anagram);
+        console.log(wordArr[i]);
+        for (let k = 0; k < sortedElement.length; k++) {
+            let char = sortedElement[k];
+            if (tempCharMap[char]) {
+                tempCharMap[char]++;
+            } else {
+                tempCharMap[char] = 1;
             }
         }
-        //mock
+        if (JSON.stringify(charMap) === JSON.stringify(tempCharMap)) {
+            //console.log(sortedAnagram, sortedElement);
+            candidateArr += wordArr[i];
+        }
     }
-    return candidates;
+    return [candidateArr];
 };
+
+let tempArr = ["enlists", "google", "inlets", "banana"];
+console.log(allContainedAnagrams("listen", tempArr));
 /* 4) PALINDROME
 
 Given a string, return true if the string is a palindrome
@@ -155,6 +157,22 @@ and punctuation in determining if the string is a palindrome.
     palindrome("abba") === true
     palindrome("abcdefg") === false
  */
+
+const isPalindrome = (text) => {
+    let middlepoint = Math.floor(text.length / 2);
+    console.log(middlepoint);
+    let charArr = text.split("");
+    let i = 0;
+    let j = charArr.length - 1;
+    while (i < middlepoint) {
+        if (charArr[i] !== charArr[j]) {
+            return false;
+        }
+        i++;
+        j--;
+    }
+    return true;
+};
 
 /* 5) REVERSE INT
 
@@ -169,6 +187,27 @@ ordering of numbers.
     reverseInt(-15) === -51
     reverseInt(-90) === -9
  */
+
+const reverseInteger = (num) => {
+    let addNegativeSign = false;
+    if (num < 0) {
+        addNegativeSign = true;
+    }
+    let absnum = Math.abs(num);
+
+    let arrStrNum = absnum.toString().split("");
+    let reversedInt = parseInt(arrStrNum.reverse().join(""));
+    console.log(arrStrNum);
+
+    if (addNegativeSign) {
+        return -reversedInt;
+    } else {
+        return reversedInt;
+    }
+};
+
+console.log(reverseInteger(-51));
+// -51 vs 51....
 
 /* 6) STEPS
 
@@ -263,8 +302,8 @@ module.exports = {
     maxCharOfStr,
     areAnagrams,
     allContainedAnagrams,
-    // isPalindrome,
-    // reverseInteger,
+    isPalindrome,
+    reverseInteger,
     // printSteps,
     // reverseString,
     // arrayDivChunks,
