@@ -206,7 +206,7 @@ const reverseInteger = (num) => {
     }
 };
 
-console.log(reverseInteger(-51));
+console.log(reverseInteger(-15));
 // -51 vs 51....
 
 /* 6) STEPS
