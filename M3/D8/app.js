@@ -1,6 +1,6 @@
 //import fetch from "node-fetch";
 
-import getProduct from "./getProduct";
+import getProduct from "./getProducts";
 
 let userArray = [];
 
@@ -41,11 +41,12 @@ const renderUsers = (userArray) => {
         console.log(STATE);
         console.log("all is true");
         card.innerHTML += `
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top" src=${product.imageUrl} alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">${user.name}</h5>
-                <p class="card-text">${user.username}</p>
-                <p class="card-text">${user.email}</p>
+                <h5 class="card-title">${product.name}</h5>
+                <p class="card-text">${product.brand}</p>
+                <p class="card-text">${product.description}</p>
+                <p class="card-text">${porduct.price}</p>
                 <a href="/detail.html" event= class="btn btn-primary"> Render ${user.id}</a>
             </div>
             `;

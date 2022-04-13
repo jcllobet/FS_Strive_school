@@ -1,3 +1,5 @@
+let productsArray = [];
+
 const getProducts = async (endpoint, requestMethod) => {
     try {
         console.log("Fetching...");
@@ -14,18 +16,64 @@ const getProducts = async (endpoint, requestMethod) => {
             redirect: "follow"
         };
         const response = await fetch(endpoint, requestOptions);
-        const result = await response.text();
+        const result = response.json();
         return result;
     } catch (error) {
         console.log("Error: ", error);
     }
 };
 
-window.onload = async () => {
-    console.log("starting Window-onload");
-    let url = "https://striveschool-api.herokuapp.com/api/product/";
-    //let prodID = "5d318e1a8541744830bef139";
-    //let data = "";
-    const response = await getProducts(url, "GET");
-    console.log(response);
+const renderProducts = (productsArray) => {
+    // target the right div
+    const row = document.querySelector("#product-display");
+    row.innerHTML = "";
+    console.log(row);
+
+    productsArray.forEach((product) => {
+        if (!product.imageUrl.includes("https")) {
+            product.imageUrl = "https://via.placeholder.com/150";
+        }
+        // shortening names and description
+        if (product.name.length > 20) {
+            product.name = product.name.substring(0, 20) + "...";
+        }
+        if (product.description.length > 20) {
+            product.description = product.description.substring(0, 20) + "...";
+        }
+        if (product._id.length > 5) {
+            console.log("id is too long");
+            product._id = product._id.substring(0, 5) + "...";
+        }
+        const col = document.createElement("div");
+        col.className = "my-3 mx-3 col-md-3";
+        const card = document.createElement("div");
+
+        card.className = "card";
+        card.innerHTML += `
+            <img class="card-img-top" src=${product.imageUrl} alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">${product.name}</h5>
+                <p class="card-text">${product.brand}</p>
+                <p class="card-text">${product.description}</p>
+                <p class="card-text">${product.price}</p>
+                <a href="/detail.html" event= class="btn btn-primary"> Render ${product._id}</a>
+            </div>
+            `;
+
+        col.appendChild(card);
+        row.appendChild(col);
+    });
 };
+
+try {
+    window.onload = async () => {
+        console.log("starting Window-onload");
+        let url = "https://striveschool-api.herokuapp.com/api/product/";
+        const data = await getProducts(url, "GET");
+        productsArray = [...data];
+
+        renderProducts(productsArray);
+    };
+} catch (err) {
+    console.log("Oops, `window` is not defined");
+}
