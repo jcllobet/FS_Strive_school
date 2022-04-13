@@ -16,13 +16,14 @@ const getProducts = async (endpoint, requestMethod) => {
 
         let requestOptions = {
             method: `${requestMethod}`,
-            headers: myHeaders,
-            redirect: "follow"
+            headers: myHeaders
         };
+
         const response = await fetch(endpoint, requestOptions);
-        const results = response.json();
+        const results = await response.json();
         console.log("We have the results:", results);
 
+        // check if resp okay
         return results;
     } catch (error) {
         console.log("Error: ", error);
