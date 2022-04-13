@@ -60,8 +60,8 @@ const renderProducts = (productsArray) => {
                 <h5 class="card-title">${product.name}</h5>
                 <p class="card-text">${product.brand}</p>
                 <p class="card-text">${product.description}</p>
-                <p class="card-text">${product.price}</p>
-                <a href="/detail.html" event= class="btn btn-primary"> Render ${product._id}</a>
+                <p class="card-text">$ ${product.price}</p>
+                <a href="/detail.html" event= class="btn btn-primary"> Access ${product._id}</a>
             </div>
             `;
 
@@ -70,10 +70,13 @@ const renderProducts = (productsArray) => {
     });
 };
 
+// const addLoginListeners = () => {
+// };
+
 window.onload = async () => {
     console.log("starting Window-onload");
     let url = "https://striveschool-api.herokuapp.com/api/product/";
     const data = await getProducts(url, "get");
     productsArray = [...data];
-    renderProducts(productsArray);
+    renderProducts(data);
 };
