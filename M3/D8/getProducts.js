@@ -20,17 +20,19 @@ const getProducts = async (endpoint, requestMethod) => {
         };
 
         const response = await fetch(endpoint, requestOptions);
-        const results = await response.json();
-        console.log("We have the results:", results);
-
-        // check if resp okay
-        return results;
+        if (response.ok) {
+            console.log("✅ Response ");
+            const results = await response.json();
+            return results;
+        } else {
+            console.log("Error:", response.status);
+        }
     } catch (error) {
         console.log("Error: ", error);
     }
 };
 
-const renderProducts = (productsArray) => {
+const renderProducts = async (productsArray) => {
     console.log("starting the rendering");
     const row = document.querySelector("#product-display");
     row.innerHTML = "";
@@ -69,15 +71,20 @@ const renderProducts = (productsArray) => {
         col.appendChild(card);
         row.appendChild(col);
     });
+    console.log("rendering finished");
 };
 
 // const addLoginListeners = () => {
 // };
 
 window.onload = async () => {
-    console.log("starting Window-onload");
-    let url = "https://striveschool-api.herokuapp.com/api/product/";
-    const data = await getProducts(url, "get");
-    productsArray = [...data];
-    renderProducts(data);
+    try {
+        console.log("starting Window-onload");
+        let url = "https://striveschool-api.herokuapp.com/api/product/";
+        const data = await getProducts(url, "get");
+        //productsArray = [...data];
+        await renderProducts(data);
+    } catch (error) {
+        console.log(error);
+    }
 };
