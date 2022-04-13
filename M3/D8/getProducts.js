@@ -1,3 +1,7 @@
+const STATE = {
+    isAdmin: false
+};
+
 let productsArray = [];
 
 const getProducts = async (endpoint, requestMethod) => {
@@ -16,15 +20,17 @@ const getProducts = async (endpoint, requestMethod) => {
             redirect: "follow"
         };
         const response = await fetch(endpoint, requestOptions);
-        const result = response.json();
-        return result;
+        const results = response.json();
+        console.log("We have the results:", results);
+
+        return results;
     } catch (error) {
         console.log("Error: ", error);
     }
 };
 
 const renderProducts = (productsArray) => {
-    // target the right div
+    console.log("starting the rendering");
     const row = document.querySelector("#product-display");
     row.innerHTML = "";
     console.log(row);
@@ -41,7 +47,6 @@ const renderProducts = (productsArray) => {
             product.description = product.description.substring(0, 20) + "...";
         }
         if (product._id.length > 5) {
-            console.log("id is too long");
             product._id = product._id.substring(0, 5) + "...";
         }
         const col = document.createElement("div");
@@ -50,7 +55,7 @@ const renderProducts = (productsArray) => {
 
         card.className = "card";
         card.innerHTML += `
-            <img class="card-img-top" src=${product.imageUrl} alt="Card image cap">
+            <img class="card-img-top max-size img-responsive" src=${product.imageUrl} alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">${product.name}</h5>
                 <p class="card-text">${product.brand}</p>
@@ -65,15 +70,10 @@ const renderProducts = (productsArray) => {
     });
 };
 
-try {
-    window.onload = async () => {
-        console.log("starting Window-onload");
-        let url = "https://striveschool-api.herokuapp.com/api/product/";
-        const data = await getProducts(url, "GET");
-        productsArray = [...data];
-
-        renderProducts(productsArray);
-    };
-} catch (err) {
-    console.log("Oops, `window` is not defined");
-}
+window.onload = async () => {
+    console.log("starting Window-onload");
+    let url = "https://striveschool-api.herokuapp.com/api/product/";
+    const data = await getProducts(url, "get");
+    productsArray = [...data];
+    renderProducts(productsArray);
+};
