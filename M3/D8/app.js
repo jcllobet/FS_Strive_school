@@ -46,6 +46,7 @@ const renderUsers = (userArray) => {
         if (STATE.displayName && STATE.displayUsername && STATE.displayEmail) {
             console.log("all is true");
             card.innerHTML += `
+                <img class="card-img-top" src="..." alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">${user.name}</h5>
                     <p class="card-text">${user.username}</p>
