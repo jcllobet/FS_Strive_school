@@ -9,7 +9,8 @@ Here is the API: https://striveschool-api.herokuapp.com/api/product/
 Here is the product model:
 
 ```
-	"_id": "5d318e1a8541744830bef139", //SERVER GENERATED
+{
+  "_id": "5d318e1a8541744830bef139", //SERVER GENERATED
   "name": "app test 1",  //REQUIRED
   "description": "somthing longer", //REQUIRED
   "brand": "nokia", //REQUIRED
@@ -19,6 +20,7 @@ Here is the product model:
   "createdAt": "2019-07-19T09:32:10.535Z", //SERVER GENERATED
   "updatedAt": "2019-07-19T09:32:10.535Z", //SERVER GENERATED
   "__v": 0 //SERVER GENERATED
+}
 ```
 
 EVERY API CALL SHOULD BE AUTHENTICATED! Every request to the API should use Token Based Authentication to secure access to the contents. Without it, you cannot access the API. You can get your token by registering on: strive.school/studentlogin The token should go in the Authorization header.
