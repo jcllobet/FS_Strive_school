@@ -1,12 +1,14 @@
 //import fetch from "node-fetch";
 
+import getProduct from "./getProduct";
+
 let userArray = [];
 
 const STATE = {
-    displayName: true,
-    displayUsername: true,
-    displayEmail: true,
+    isAdmin: false
 };
+
+//______________________________________________________________________________
 
 // Async Function to Fetch users using await
 
@@ -102,70 +104,32 @@ const handleDropdownFilter = (event) => {
     }
 };
 
-// Ex3) Create a function that, from the list of users, extracts only the names
-
-const userNames = (userArray) => {
-    let userNameArr = [];
-    userArray.forEach((user) => {
-        userNameArr = [...userNameArr, user.name];
-    });
-    return userNameArr;
-};
-
-// Ex4) Create a function that, from the list of users, creates an array of addresses as string and not as an object. Like:
-//         {
-//         "street": "Victor Plains",
-//         "suite": "Suite 879",
-//         "city": "Wisokyburgh",
-//         "zipcode": "90566-7771",
-//         "geo": {
-//           "lat": "-43.9509",
-//           "lng": "-34.4618"
-//         }
-//     Should become Victor Plains, Suite 879, Wisokyburgh (90566-7771)
-
-const userAddress = (userNameArr, userArray) => {
-    let userAddressArr = [];
-    let addressArr = [];
-    userArray.forEach((user) => {
-        let obj = {
-            name: user.name,
-            addressString: "",
-        };
-        let tempString = "";
-        tempString += user.address.street + ", ";
-        tempString += user.address.suite + ", ";
-        tempString += user.address.city + ", ";
-        tempString += `(${user.address.zipcode})`;
-        obj.addressString = tempString;
-        userAddressArr = [...userAddressArr, obj];
-    });
-    return userAddressArr;
-};
-
 window.onload = async () => {
-    const data = await fetchUsers();
-    userArray = [...data];
-    // to be used in UserDetailPage
-    //const { id, name, username, email, address, phone, website } = userArray;
-
-    localStorage.setItem("userArray", JSON.stringify(userArray));
-    console.log("Logging user array", userArray);
-    renderUsers(userArray);
-    addDropdown(userArray);
-    addDropdownListeners(userArray);
-    userNames(userArray);
-    console.log(userNames(userArray));
-    userAddress(userNames(userArray), userArray);
-    console.log(userAddress(userNames(userArray), userArray));
+    console.log("starting Window-onload");
+    let url = "https://striveschool-api.herokuapp.com/api/product/";
+    let prodID = "5d318e1a8541744830bef139";
+    //let data = "";
+    try {
+        await getProduct(url, prodID, "get");
+    } catch (error) {
+        console.log("Error: ", error);
+    }
+    console.log(data);
 };
 
-// Add listener to user input text
-// Filter input = Glenna
+// window.onload = async () => {
+//     const data = await fetchUsers();
+//     userArray = [...data];
+//     // to be used in UserDetailPage
+//     //const { id, name, username, email, address, phone, website } = userArray;
 
-// Ex5) Add a button that sorts the list by name ascending / descending (ONE button)
-
-// Ex6) Add a link on each user, when clicked it must go to a detail page, where to user information are presented (from the API)
-// pass the information from the app.js into the userdetail page and render
-
-// Visualize on a Google Map plugin all the users (using lat & lng)
+//     localStorage.setItem("userArray", JSON.stringify(userArray));
+//     console.log("Logging user array", userArray);
+//     renderUsers(userArray);
+//     addDropdown(userArray);
+//     addDropdownListeners(userArray);
+//     userNames(userArray);
+//     console.log(userNames(userArray));
+//     userAddress(userNames(userArray), userArray);
+//     console.log(userAddress(userNames(userArray), userArray));
+// };
