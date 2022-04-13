@@ -25,17 +25,11 @@ const fetchUsers = async () => {
 
 const renderUsers = (userArray) => {
     // target the right div
-    const row = document.querySelector(".container .row");
+    const row = document.querySelector("#product-display");
     row.innerHTML = "";
     console.log(row);
 
     userArray.forEach((user) => {
-        // for each user in array
-        // create element
-        // add classes
-        // add inner html
-        // appendChild to parent
-
         console.log(user);
         const col = document.createElement("div");
         col.className = "my-3 mx-3 col-md-3";
@@ -43,26 +37,16 @@ const renderUsers = (userArray) => {
 
         card.className = "card";
         console.log(STATE);
-        if (STATE.displayName && STATE.displayUsername && STATE.displayEmail) {
-            console.log("all is true");
-            card.innerHTML += `
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">${user.name}</h5>
-                    <p class="card-text">${user.username}</p>
-                    <p class="card-text">${user.email}</p>
-                    <a href="/detail.html" event= class="btn btn-primary"> Render ${user.id}</a>
-                </div>
-                `;
-        } else {
-            console.log("only showing name");
-            card.innerHTML += `
-                <div class="card-body">
-                    <h5 class="card-title">${user.name}</h5>
-                    <a href="/detail.html" event= class="btn btn-primary"> Render ${user.id}</a>
-                </div>
-                `;
-        }
+        console.log("all is true");
+        card.innerHTML += `
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">${user.name}</h5>
+                <p class="card-text">${user.username}</p>
+                <p class="card-text">${user.email}</p>
+                <a href="/detail.html" event= class="btn btn-primary"> Render ${user.id}</a>
+            </div>
+            `;
 
         col.appendChild(card);
         row.appendChild(col);
@@ -70,24 +54,9 @@ const renderUsers = (userArray) => {
 };
 
 const addDropdown = async (userArray) => {
-    const row = document.querySelector(".container .row2");
-    const dropdown = document.createElement("div");
-    dropdown.className = "col-5 my-3 mx-3";
-    dropdown.innerHTML = `
-    <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Filter By
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Name</a>
-            <a class="dropdown-item" href="#">Username</a>
-            <a class="dropdown-item" href="#">Email</a>
-        </div>
-    </div>
-    `;
+    const row = document.querySelector(".row");
     const search = document.createElement("div");
-    search.className = "col-5 my-3 mx-3";
+    search.className = "col-10 my-3 mx-3";
     search.innerHTML = `    
         <div class="input-group">
             <div class="form-outline">
