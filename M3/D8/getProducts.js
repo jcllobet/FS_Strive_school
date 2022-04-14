@@ -4,22 +4,26 @@ const STATE = {
 
 let productsArray = [];
 
+let myHeaders = new Headers();
+
+myHeaders.append(
+    "Authorization",
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NDk4NTIyNzksImV4cCI6MTY1MTA2MTg3OX0.REp870Hg9tQk7-FQ-ZQH1IItreSnvI6RHFN0HCErSE0"
+);
+
+let requestOptions = {
+    method: "GET",
+    headers: myHeaders
+};
+
 const getProducts = async (endpoint, requestMethod) => {
     try {
         console.log("Fetching...");
-        let myHeaders = new Headers();
 
-        myHeaders.append(
-            "Authorization",
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NDk4NTIyNzksImV4cCI6MTY1MTA2MTg3OX0.REp870Hg9tQk7-FQ-ZQH1IItreSnvI6RHFN0HCErSE0"
-        );
+        requestOptions.method = requestMethod;
 
-        let requestOptions = {
-            method: `${requestMethod}`,
-            headers: myHeaders
-        };
+        const response = await fetch(endpoint, requestOptions, 5000);
 
-        const response = await fetch(endpoint, requestOptions);
         if (response.ok) {
             console.log("✅ Response ");
             const results = await response.json();

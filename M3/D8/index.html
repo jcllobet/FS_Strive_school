@@ -86,13 +86,35 @@
         <div class="row" id="search-bar">
         </div>
         <div class="row" id="product-display">
+            <div class="col-md-3 my-3 mx-3">
+                <img class="card-img-top max-size img-responsive" src='https://picsum.photos/200/300'
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Mock</h5>
+                    <p class="card-text">${product.brand}</p>
+                    <p class="card-text">${product.description}</p>
+                    <p class="card-text">$ ${product.price}</p>
+                    <a href="/detail.html" event=class="btn btn-primary"> Access ${product._id}</a>
+                </div>
+            </div>
+            <div class="col-md-3 my-3 mx-3">
+                <img class="card-img-top max-size img-responsive" src='https://picsum.photos/200/300'
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Mock</h5>
+                    <p class="card-text">${product.brand}</p>
+                    <p class="card-text">${product.description}</p>
+                    <p class="card-text">$ ${product.price}</p>
+                    <a href="/detail.html" event=class="btn btn-primary"> Access ${product._id}</a>
+                </div>
+            </div>
             <!-- Adding user cards here -->
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-        <script src="getProducts.js"></script>
+        <!-- <script src="getProducts.js"></script> -->
 </body>
 
 </html>
