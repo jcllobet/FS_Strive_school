@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Title</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#">Spanish Amazon</a>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                data-target="#exCollapsingNavbar">
+                &#9776;
+            </button>
+            <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a href="/M3/D8/index.html" class="nav-link">Home</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2>Backoffice</h2>
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Product Name</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="name"
+                            placeholder="Insert the Name of the product">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="brand">Product Brand</label>
+                        <textarea type="text" class="form-control" id="brand" aria-describedby="brand"
+                            placeholder="Insert the Product Brand"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Description">Product Description</label>
+                        <textarea type="text" class="form-control" id="description" aria-describedby="description"
+                            placeholder="Insert the Product Description" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Ticket Price</label>
+                        <input type="number" class="form-control" id="price" aria-describedby="name"
+                            placeholder="Price for the Event">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="console.log('cancel')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Submit Event</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="addProducts.js"></script>
+</body>
+
+</html>
